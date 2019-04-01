@@ -1,0 +1,44 @@
+<h5><b>Crossing</b>: {{p.crossing | upper}}</h5>
+<h5><b>Finishing</b>: {{p.finishing | upper}}</h5>
+<h5><b>Heading</b>: {{p.heading | upper}}</h5>
+<h5><b>Short Passing</b>: {{p.short_passing | upper}}</h5>
+<h5><b>Volley</b>: {{p.volley | upper}}</h5>
+<h5><b>Dribbling</b>: {{p.dribbling | upper}}</h5>
+
+
+<h5><b>Curve</b>: {{p.curve | upper}}</h5>
+<h5><b>Freekick</b>: {{p.fk_accuracy | upper}}</h5>
+<h5><b>Long Passing</b>: {{p.long_passing | upper}}</h5>
+<h5><b>Ball Control</b>: {{p.ball_control | upper}}</h5>
+<h5><b>Acceleration</b>: {{p.acceleration | upper}}</h5>
+<h5><b>Sprint Speed</b>: {{p.sprint_speed | upper}}</h5>
+
+<h5><b>Agility</b>: {{p.agility | upper}}</h5>
+<h5><b>Reaction</b>: {{p.reaction | upper}}</h5>
+<h5><b>Balance</b>: {{p.balance | upper}}</h5>
+<h5><b>Shot Power</b>: {{p.shot_power | upper}}</h5>
+<h5><b>Jumping</b>: {{p.jumping | upper}}</h5>
+<h5><b>Stamina</b>: {{p.stamina | upper}}</h5>
+<h5><b>Strength</b>: {{p.strength | upper}}</h5>
+   
+<h5><b>Long Shots</b>: {{p.long_shots | upper}}</h5>
+<h5><b>Aggression</b>: {{p.aggression | upper}}</h5>
+<h5><b>Interception</b>: {{p.interception | upper}}</h5>
+<h5><b>Positioning</b>: {{p.positioning | upper}}</h5>
+<h5><b>Vision</b>: {{p.vision | upper}}</h5>
+<h5><b>Penalty</b>: {{p.penalties | upper}}</h5>
+
+<h5><b>Composure</b>: {{p.composure | upper}}</h5>
+<h5><b>Marking</b>: {{p.marking | upper}}</h5>
+<h5><b>Standing Tackle</b>: {{p.standing_tackle | upper}}</h5>
+<h5><b>Slide Tackle</b>: {{p.slide_tackle | upper}}</h5>
+<h5><b>GK Diving</b>: {{p.gk_diving | upper}}</h5>
+<h5><b>GK Handling</b>: {{p.gk_handling | upper}}</h5>
+
+<h5><b>GK Kicking</b>: {{p.gk_kicking | upper}}</h5>
+<h5><b>GK Positioning</b>: {{p.gk_positioning | upper}}</h5>
+<h5><b>GK Reflexes</b>: {{p.gk_reflexes | upper}}</h5>
+
+    gk_kicking=models.IntegerField()
+    gk_positioning=models.IntegerField()
+    gk_reflexes=models.IntegerField()

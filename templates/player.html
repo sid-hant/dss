@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% block content %}
+
+
+{% for p in object_list %}
+   <nav class="navbar navbar-expand-lg navbar-light" style="padding-bottom: 0; background-color: rgb(56,0,60);">
+      <div class="container">
+      
+         <a class="navbar-brand light navbar-title title-nav" href="{% url 'home' %}" style="font-size: 300%; padding-top: 0px; padding-bottom: 14px; color: white;"><b>{{ p.name | upper }}</b></a>
+
+      </div>
+   </nav>
+   <br>
+
+<div class="container">
+    <div class="container">
+        <h3><b>PLAYER INFO.</b></h3>
+        <div class="row">
+            <div class="col">
+                <h4><b>PLAYS FOR</b>: {{p.team | upper}}</h4>
+                <h4><b>VALUE</b>: ${{p.value | upper}}</h4>
+            </div>
+            <div class="col">
+                <h4><b>AGE</b>: {{p.getAge | upper}}</h4>
+            </div>
+            <div class="col">
+                <h4><b>POSITION</b>: {{p.position | upper}}</h4>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <h3><b>PREV SEASON STATS.</b></h3>
+        <div class="row">
+            <div class="col">
+                <h4><b>APPEARANCES</b>: {{p.appearances | upper}}</h4>
+            </div>
+            <div class="col">
+                <h4><b>GOALS</b>: {{p.goals | upper}}</h4>
+            </div>
+            <div class="col">
+                <h4><b>ASSISTS</b>: {{p.assists | upper}}</h4>
+            </div>
+        </div>
+        <BR><br>
+        <h3><b>PLAYER SKILLS.</b></h3>
+        <div class="row">
+            <div class="col">
+                <h5><b>Pace</b>: {{p.pace | upper}}</h5>
+                <h5><b>Dribbling</b>: {{p.dribbling | upper}}</h5>
+            </div>
+            <div class="col">
+                <h5><b>Shooting</b>: {{p.shooting | upper}}</h5>
+                <h5><b>Defence</b>: {{p.defence | upper}}</h5>
+            </div> 
+            <div class="col">
+                <h5><b>Passing</b>: {{p.passing | upper}}</h5>
+                <h5><b>Physical</b>: {{p.physical | upper}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+
+<a href={% url 'player_search' pk=p.id %} class="btn btn-outline-secondary btn-lg btn-block" style="border-color:black;" role="button" aria-pressed="true">LOOK FOR A REPLACEMENT</a>
+
+
+</div>
+
+<br><br>
+
+{% endfor %}
+
+{% endblock %}

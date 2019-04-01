@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% block content %}
+
+
+{% for p in object_list %}
+   <nav class="navbar navbar-expand-lg navbar-light" style="padding-bottom: 0; background-color: rgb(56,0,60);">
+      <div class="container">
+      
+         <a class="navbar-brand light navbar-title title-nav" href="{% url 'home' %}" style="font-size: 300%; padding-top: 0px; padding-bottom: 14px; color: white;"><b>{{ p.name | upper }}</b></a>
+
+      </div>
+   </nav>
+   <br>
+
+<div class="container">
+    <div class="container">
+        <h1><b>Shortlist</b></h1>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table">
+        <thead class="thead-dark">
+            <tr style="font-size:10px;" align="center">
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Pos.</th>
+                <th scope="col">App.</th>
+                <th scope="col">G</th>
+                <th scope="col">A</th>
+                <th scope="col">Value</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in shortlist %}
+            <tr align="center">
+                <td><a style="color:black;" href={% url 'player_detail' pk=obj.id %}>{{obj.name}}</a></td>
+                <td>{{ obj.getAge }}</td>
+                <td>{{obj.position}}</td>
+                <td>{{obj.appearances}}</td>
+                <td>{{obj.goals}}</td>
+                <td>{{obj.assists}}</td>
+                <td>{{obj.value}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
