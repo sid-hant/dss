@@ -20,13 +20,12 @@
         <div class="row">
             <div class="col">
                 <h4><b>PLAYS FOR</b>: {{p.team | upper}}</h4>
-                <h4><b>VALUE</b>: ${{p.value | upper}}</h4>
-            </div>
-            <div class="col">
-                <h4><b>AGE</b>: {{p.getAge | upper}}</h4>
             </div>
             <div class="col">
                 <h4><b>POSITION</b>: {{p.position | upper}}</h4>
+            </div>
+            <div class="col">
+                <h4><b>VALUE</b>: ${{p.value | upper}}</h4>
             </div>
         </div>
         <br>
@@ -48,6 +47,19 @@
         <h3><b>PLAYER SKILLS.</b></h3>
         <div class="row">
             <div class="col">
+            {% if flag %}
+                <h5><b>Diving</b>: {{p.pace | upper}}</h5>
+                <h5><b>Reflexes</b>: {{p.dribbling | upper}}</h5>
+            </div>
+            <div class="col">
+                <h5><b>Handling</b>: {{p.shooting | upper}}</h5>
+                <h5><b>Speed</b>: {{p.defence | upper}}</h5>
+            </div> 
+            <div class="col">
+                <h5><b>Kicking</b>: {{p.passing | upper}}</h5>
+                <h5><b>Position</b>: {{p.physical | upper}}</h5>
+
+            {% else %}
                 <h5><b>Pace</b>: {{p.pace | upper}}</h5>
                 <h5><b>Dribbling</b>: {{p.dribbling | upper}}</h5>
             </div>
@@ -58,6 +70,7 @@
             <div class="col">
                 <h5><b>Passing</b>: {{p.passing | upper}}</h5>
                 <h5><b>Physical</b>: {{p.physical | upper}}</h5>
+            {% endif %}
             </div>
         </div>
     </div>

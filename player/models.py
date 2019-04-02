@@ -9,7 +9,6 @@ class Player(models.Model):
     
     name=models.TextField()
     team = models.ForeignKey(Team, related_name="team", on_delete=models.CASCADE)
-    birth_date=models.DateField()
     value = models.FloatField()
     position=models.TextField()
     
@@ -31,10 +30,6 @@ class Player(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-
-    @property
-    def getAge(self): 
-        return (date.today() - self.birth_date)//timedelta(days=365.2425)
     
     class Meta:
         ordering = ['position']

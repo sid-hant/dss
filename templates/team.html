@@ -24,7 +24,6 @@
         <thead class="thead-dark">
             <tr style="font-size:10px;" align="center">
                 <th scope="col">Name</th>
-                <th scope="col">Age</th>
                 <th scope="col">Pos.</th>
                 <th scope="col">App.</th>
                 <th scope="col">G</th>
@@ -37,12 +36,11 @@
             {% for obj in object_list %}
             <tr align="center">
                 <td><a style="color:black;" href={% url 'player_detail' pk=obj.id %}>{{obj.name}}</a></td>
-                <td>{{ obj.getAge }}</td>
                 <td>{{obj.position}}</td>
                 <td>{{obj.appearances}}</td>
                 <td>{{obj.goals}}</td>
                 <td>{{obj.assists}}</td>
-                <td>{{obj.value}}</td>
+                <td>${{obj.value}}</td>
             </tr>
             {% endfor %}
         </tbody>
