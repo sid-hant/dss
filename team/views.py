@@ -4,5 +4,4 @@ from .models import Team
 
 def showTeams(request):
     teams = Team.objects.filter()
-
     return render(request, 'home.html', {'object_list': teams})
